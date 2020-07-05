@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-arquivo_contatos = open('dados/contatos_escrita.csv', encoding='latin_1', mode='w+')
+arquivo_contatos = open('dados/contatos_escrita.csv', encoding='latin_1', mode='a+')
 
 contatos = ['11,Carol,carol@carol.com.br\n',
             '12,Ana,ana@ana.com.br\n',
@@ -13,4 +13,10 @@ for contato in contatos:
 
 arquivo_contatos.flush()
 
-input('Pressione <Enter> para encerrar o programa')
+arquivo_contatos.seek(28)
+arquivo_contatos.write('12,Ana,ana@ana.com.br\n'.upper())
+arquivo_contatos.flush()
+arquivo_contatos.seek(0)
+
+for linha in arquivo_contatos:
+    print(linha)
