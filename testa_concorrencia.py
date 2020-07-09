@@ -9,5 +9,3 @@ with open('dados/contatos_escrita.csv', encoding='latin_1', mode='w') as arquivo
 
 with open('dados/contatos_escrita.csv', encoding='latin_1', mode='a') as arquivo2:
     arquivo2.write(contato_andreza)
-
-arquivo2.write('Nova linha')
